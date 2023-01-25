@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractUser
 #import datetimefrom django.datetime import datetime
 import datetime
 from django.conf import settings
+import django.utils.timezone
 
 class CustomUser(AbstractUser):
     UploadPhoto = models.ImageField(upload_to="pics",help_text='Please upload recent color photo')
@@ -26,7 +27,7 @@ class Tasklist(models.Model):
     task = models.CharField(max_length=150,choices=CHOICES,default='Mutual Funds')
     done = models.BooleanField(default=False)
     amount=models.IntegerField(default=1000,null=True,blank=True)
-    Date = models.DateTimeField(default=datetime.datetime.now())
+    Date = models.DateTimeField(default=django.utils.timezone.now)
 
 
     def __str__(self):
