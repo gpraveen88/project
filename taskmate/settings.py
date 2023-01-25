@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4w)fsas-9&py(7hs8a0dm@dtkwkgkw3c8&6s9o8x1ylr_j4xlv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [http://gpraveen.pythonanywhere.com/]
 
