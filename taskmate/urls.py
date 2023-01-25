@@ -19,11 +19,12 @@ from todolist_app import views as todolist_views
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import include, path
-
+from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('todolist/',include('todolist_app.urls')),
-    path('account/',include('users_app.urls')),
+    path('accounts/',include('users_app.urls')),
+    path('accounts/',include('django.contrib.auth.urls')),
     path('',todolist_views.index,name="index"),
     path('about/',todolist_views.about,name='about'),
     path('APART/',todolist_views.APART,name='APART'),
@@ -31,7 +32,8 @@ urlpatterns = [
     path('results/',todolist_views.test1,name='test1'),
     path('contact/request/',todolist_views.get_request_contact,name='get_request_contact'),
     path('request_call/',todolist_views.request_call_details,name='request_call_details'),
-    path('careers/',todolist_views.careers,name='careers')
+    path('careers/',todolist_views.careers,name='careers'),
+    
 ] 
 if settings.DEBUG:
      urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -6,21 +6,19 @@
  <title>login page</title>
 {% endblock title%}
 {% block content %} 
-<body background="https://wallpaperaccess.com/full/1496206.jpg" style=" 
+<body>
 
-/* Center and scale the image nicely */
 
-background-repeat: no-repeat;
-background-size: 100%;">
+
 <br/>
-<div class="container" >
-  <div class="row border-0">
-    <div class="col-8">
+<div class="container mb-10" align="center" style="background-image: url(https://t3.ftcdn.net/jpg/01/22/71/96/360_F_122719641_V0yw2cAOrfxsON3HeWi2Sf4iVxhv27QO.jpg);background-repeat: no-repeat; border-radius:50%;" >
+  <div class="row border-0" >
+    <div class="col-7">
         
    </div>
-    <div class="col-4  ">
+    <div class="col-5" >
     
-          <h2 class="mt-10" style="color:#FFFFFF;" align="center" class="ml-2"> LOGIN FORM</h2><br/>
+          <h2 class="mt-10 text-primary" style="color:#FFFFFF;" align="center" class="ml-2"> LOGIN FORM</h2><br/>
           {% if messages %}
           {% for message in messages %} 
           <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -35,11 +33,11 @@ background-size: 100%;">
                     {%csrf_token%}
                         {{ form|crispy }}
 
-                        <center><button style=" width: 50%;" type="submit" class="mt-4 btn btn-primary mb-5"> Login </button></center>
-                       <!---- <button type="reset" class="mt-4 btn btn-primary mb-5"> Cancel </button>1 -->
-                
-                      </form>
-                      <h5 style="color:white;"> New to Site,Please <a href="{% url 'register' %}">Sign Up</a> here </h5>
+                        <center><button style=" width: 50%;" type="submit" class="mt-4 btn btn-primary mb-5"> Login </button>&nbsp;&nbsp;&nbsp;&nbsp;<small><a href="{% url 'password_reset' %}">Forgot password?</a></small></center>
+                       <!---- <button type="reset" class="mt-4 btn btn-primary mb-5"> Cancel </button>1 -->                      
+          </form>
+                      
+                      <h5 style="color:green;"> New to Site,Please <a href="{% url 'register' %}">Sign Up</a> here </h5>
     </div>
     
   </div>
